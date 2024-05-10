@@ -1,9 +1,9 @@
 # resource <resource-type> <resource-name>
-resource "aws_instance" "db" {
+resource "aws_instance" "expense" {
     count = length(var.instance_name)
     ami = var.image_id
-    vpc_security_group_ids = [aws_security_group.allow_ssh2.id]
-    instance_type = var.instance_name[count.index] == "db" ? "t2.micro" : "t2.small"
+    vpc_security_group_ids = [aws_security_group.allow_ssh4.id]
+    instance_type = var.instance_name[count.index] == "db" ? "t3.small" : "t3.micro"
     tags = merge(
         var.common_tags,
         {
@@ -13,7 +13,7 @@ resource "aws_instance" "db" {
     )
 }
 
-resource "aws_security_group" "allow_ssh2" {
+resource "aws_security_group" "allow_ssh4" {
     name = var.sg_name
     description = var.sg_description
 
@@ -33,7 +33,7 @@ resource "aws_security_group" "allow_ssh2" {
  }
 
     tags = {
-        Name = "allow_ssh1"
+        name = "allow_ssh4"
         createdby = "sudheer"
     }
 }

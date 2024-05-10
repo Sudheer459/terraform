@@ -1,6 +1,6 @@
 variable "image_id" {
     type = string #optional
-    #default = "ami-07caf09b362be10b8" #optional
+    default = "ami-07caf09b362be10b8" #optional
     description = "linux ami id" #optional
 }
 
