@@ -16,10 +16,10 @@ variable "common_tags" {
 }
 
 variable "domain_name" {
-    default = "daws78s.online"
+    default = "sudheer459.online"
  }
  
  variable "zone_id" {
-    default = "Z00738251BMOJYUBBF1UM"
+    default = "Z0751114UBEW11TFFZVJ"
 }
 
